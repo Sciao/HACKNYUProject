@@ -1,5 +1,5 @@
 import streamlit as st
-import pages.dataset as ds
+import dataset as ds
 
 st.markdown("All You Need for Mental Health Help")
 st.sidebar.markdown("Home")
