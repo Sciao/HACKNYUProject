@@ -23,3 +23,7 @@ The basic instructions for installing streamlit can be found [here](https://docs
 ## Using the Form
 
 For the prospective student, they would fill in the appropriate fields in the form and hit the submit button. The results would be the best match for the student's information, but currently it is default to match zipcode. 
+
+## Mental Health Dataset Used
+
+[Link](https://data.cityofnewyork.us/Health/Mental-Health-Service-Finder-Data/8nqg-ia7v)
