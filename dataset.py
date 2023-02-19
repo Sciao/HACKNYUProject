@@ -17,8 +17,8 @@ def get_clinic_data(zipcode):
                 f"{clinic['name_1']}{', ' + clinic['name_2'] if 'name_2' in clinic else ''}"'<br>'
                 f"{clinic['street_1']}{', ' + clinic['street_2'] if 'street_2' in clinic else ''}"'<br>'
                 f"{clinic['city']}{', ' + clinic['zip']}"'<br>'
-                f"{clinic['phone'] if 'phone' in clinic else ''}"
-                f", <a href='{clinic['website']}' target='_blank'>{clinic['website']}</a> " if 'website' in clinic else ''
+                f"{clinic['phone'] if 'phone' in clinic else ''}"'<br>'
+                f"{'<a href=' + clinic['website'] + '>' + clinic['website'] + '</a >' if 'website' in clinic else ''}"
                 '</div>',
                 unsafe_allow_html=True
             )
