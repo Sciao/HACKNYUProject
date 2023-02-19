@@ -9,15 +9,20 @@ def get_clinic_data(zipcode):
 
     if response.status_code == 200:  # Check if the request was successful
         data = response.json()  # Convert the response to a JSON object
+        st.markdown("# Results:")
 
         for clinic in data:
-            st.write(f"{clinic['name_1']} {', ' + clinic['name_2'] if 'name_2' in clinic else ''}")
-            st.write(f"{clinic['street_1']} {', ' + clinic['street_2'] if 'street_2' in clinic else ''}")
-            st.write(f"{clinic['city']} {', ' + clinic['zip']}")
-            st.write(f"{clinic['phone'] if 'phone' in clinic else ''} {', ' + clinic['website'] if 'website' in clinic else ''}")
+            st.markdown(
+                '<div style="border: 1px solid black; padding: 10px; border-radius: 5px;">'
+                f"{clinic['name_1']}{', ' + clinic['name_2'] if 'name_2' in clinic else ''}"'<br>'
+                f"{clinic['street_1']}{', ' + clinic['street_2'] if 'street_2' in clinic else ''}"'<br>'
+                f"{clinic['city']}{', ' + clinic['zip']}"'<br>'
+                f"{clinic['phone'] if 'phone' in clinic else ''}"
+                f", <a href='{clinic['website']}' target='_blank'>{clinic['website']}</a> " if 'website' in clinic else ''
+                '</div>',
+                unsafe_allow_html=True
+            )
+            st.write("")
 
     else:
         print("Request failed with status code:", response.status_code)
-
-
-get_clinic_data('10010')
